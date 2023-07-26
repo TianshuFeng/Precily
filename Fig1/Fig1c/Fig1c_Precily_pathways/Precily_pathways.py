@@ -40,7 +40,7 @@ def model_builder(hp):
     model.add(keras.layers.Dense(units=hp.Int('units_' + str(i),  
                                 min_value=units_range[0], max_value=units_range[1], 
                                 step=units_range[2]), activation='relu'))
-     model.add(
+    model.add(
             keras.layers.Dropout(
                 hp.Float(
                     'dropout',
@@ -52,11 +52,11 @@ def model_builder(hp):
         )
 
     
-   model.add(keras.layers.Dense(1))
-   hp_learning_rate = hp.Choice('learning_rate', values=lr_values)
-     model.compile(optimizer=keras.optimizers.Adam(learning_rate=hp_learning_rate),
+    model.add(keras.layers.Dense(1))
+    hp_learning_rate = hp.Choice('learning_rate', values=lr_values)
+    model.compile(optimizer=keras.optimizers.Adam(learning_rate=hp_learning_rate),
                 loss='mean_squared_error') 
-  return model
+    return model
 
 ##Perfrom cell line wise split
 #def cell_line_split(data, k):
@@ -72,7 +72,7 @@ def model_builder(hp):
       #else:
           #test.append(i)
   #train = pd.DataFrame(train)
-  test = pd.DataFrame(test)
+#   test = pd.DataFrame(test)
   #return train, test
 
 ##If complete data is being used use perform cell line wise split using cell_line_split function
