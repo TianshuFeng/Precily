@@ -1,0 +1,17 @@
+[Global_Params]
+input_dim = 1429
+
+train_data = 'Training_data.csv'
+test_data = 'Test_Set.csv'
+data_url = 'https://ftp.mcs.anl.gov/pub/candle/public/improve/model_curation_data/'
+output_dir = 'output'
+model_name = 'Precily'
+epochs = 5
+dense = [1024, 512]
+activation = "relu"
+optimizer = "adam"
+dropout = 0.1
+learning_rate = 0.0001
+loss = 'mean_squared_error'
+batch_size = 32
+ckpt_save_interval = 25
